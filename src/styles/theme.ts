@@ -9,7 +9,10 @@ export enum E_MediaQuery {
 export const theme = {
   palette: {
     primary: '#005FF8',
+    primary_hover: '#0024CB',
+    primary_active: '#274BC8',
     sidebar: '#091336',
+    sidebarSelectedItem: 'rgba(216, 228, 251, 0.32)',
 
     white: '#FFFFFF',
     yellow: '#FFD500',

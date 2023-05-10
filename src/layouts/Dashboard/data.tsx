@@ -1,34 +1,75 @@
+import MediaBriefcase from 'assets/icons/app/briefcase-outline.svg'
+import MediaCalls from 'assets/icons/app/calls.svg'
+import MediaCharTimeline from 'assets/icons/app/chart_timeline.svg'
+import MediaDocuments from 'assets/icons/app/documents.svg'
+import MediaLibrary from 'assets/icons/app/local_library.svg'
+import MediaMail from 'assets/icons/app/mail_outline.svg'
+import MediaOrders from 'assets/icons/app/orders.svg'
+import MediaPeople from 'assets/icons/app/people.svg'
+import MediaProfile from 'assets/icons/app/profile.svg'
+import MediaSettings from 'assets/icons/app/settings.svg'
+
 import { T_MenuItem } from 'features/Sidebar/models'
 
 export const menuItems: T_MenuItem[] = [
   {
-    key: 'articles',
-    label: 'dashboard.sidebar.articles',
-    icon: '1',
-    to: '/articles',
+    key: 'totals',
+    label: 'Итоги',
+    icon: <MediaCharTimeline />,
+    to: '/calls',
   },
   {
-    key: 'tags',
-    label: 'dashboard.sidebar.tags',
-    icon: '1',
-    to: '/tags',
+    key: 'orders',
+    label: 'Заказы',
+    icon: <MediaOrders />,
+    to: '/calls',
   },
   {
-    key: 'reactions',
-    label: 'dashboard.sidebar.reactions',
-    icon: '1',
-    to: '/reactions',
+    key: 'messages',
+    label: 'Сообщения',
+    icon: <MediaMail />,
+    to: '/calls',
   },
   {
-    key: 'admins',
-    label: 'dashboard.sidebar.admins',
-    icon: '1',
-    to: '/admins',
+    key: 'calls',
+    label: 'Звонки',
+    icon: <MediaCalls />,
+    to: '/calls',
   },
   {
-    key: 'users',
-    label: 'dashboard.sidebar.users',
-    icon: '1',
-    to: '/users',
+    key: 'partners',
+    label: 'Контрагенты',
+    icon: <MediaPeople />,
+    to: '/calls',
+  },
+  {
+    key: 'documents',
+    label: 'Документы',
+    icon: <MediaDocuments />,
+    to: '/calls',
+  },
+  {
+    key: 'performers',
+    label: 'Исполнители',
+    icon: <MediaProfile />,
+    to: '/calls',
+  },
+  {
+    key: 'reports',
+    label: 'Отчеты',
+    icon: <MediaBriefcase />,
+    to: '/calls',
+  },
+  {
+    key: 'library',
+    label: 'База знаний',
+    icon: <MediaLibrary />,
+    to: '/calls',
+  },
+  {
+    key: 'settings',
+    label: 'Настройки',
+    icon: <MediaSettings />,
+    to: '/calls',
   },
 ]
