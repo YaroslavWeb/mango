@@ -3,16 +3,16 @@ import { createGlobalStyle } from 'styled-components'
 export const GlobalStyles = createGlobalStyle`
   html,
   body {
-    font-family: 'SFProDisplay', sans-serif;
-
     overflow: hidden;
     
     min-height:  100vh;
     margin: 0;
     padding: 0;
-    
-    font-size: 16px;
+
+    font-family: SFProDisplay, sans-serif;
+    font-size: 14px;
     font-weight: 400;
+    color: ${({ theme }) => theme.palette.gray};
     
     background-color: #F0F2F5;
   }
@@ -37,5 +37,9 @@ export const GlobalStyles = createGlobalStyle`
   a {
     color: inherit;
     text-decoration: none;
+  }
+
+  input {
+    border: none;
   }
 `

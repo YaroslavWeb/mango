@@ -9,13 +9,20 @@ export enum E_MediaQuery {
 export const theme = {
   palette: {
     primary: '#005FF8',
-    primary_hover: '#0024CB',
-    primary_active: '#274BC8',
+    primaryHover: '#0024CB',
+    primaryActive: '#274BC8',
     sidebar: '#091336',
     sidebarSelectedItem: 'rgba(216, 228, 251, 0.32)',
 
-    white: '#FFFFFF',
+    greenLight: '#00A775',
+    green: '#28A879',
+    yellowLight: '#FFB800',
     yellow: '#FFD500',
+    redLight: '#EA1A4F',
+    red: '#EA1A4F',
+    white: '#FFFFFF',
+    gray: '#899CB1',
+    milk: '#DEE6F5',
   },
   media: {
     xl: E_MediaQuery.xl,
@@ -25,6 +32,7 @@ export const theme = {
   },
   sizes: {
     header: { height: 64 },
+    sidebar: { width: 240 },
   },
 }
 

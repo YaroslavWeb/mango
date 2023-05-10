@@ -1,5 +1,3 @@
-import { motion } from 'framer-motion'
-
 import styled, { css } from 'styled-components'
 
 import { E_ButtonMod, E_ButtonSize } from '.'
@@ -25,6 +23,7 @@ export const Button = styled.button<ButtonProps>`
 
   width: 100%;
   padding: 0 16px;
+
   border-radius: 4px;
 
   font-size: 18px;
@@ -42,20 +41,20 @@ export const Button = styled.button<ButtonProps>`
     switch ($mod) {
       case E_ButtonMod.primary:
         return css`
-          background-color: ${theme.palette.primary};
           color: ${theme.palette.white};
+          background-color: ${theme.palette.primary};
 
           &:hover {
-            background-color: ${theme.palette.primary_hover};
+            background-color: ${theme.palette.primaryHover};
           }
 
           &:active {
-            background-color: ${theme.palette.primary_active};
+            background-color: ${theme.palette.primaryActive};
           }
         `
       case E_ButtonMod.outline:
         return css`
-          box-shadow: rgba(0, 0, 0, 0.5) 0 3px 7px -3px, 0 6px 0 0 ${theme.palette.white};
+          box-shadow: rgb(0 0 0 / 50%) 0 3px 7px -3px, 0 6px 0 0 ${theme.palette.white};
         `
     }
   }};

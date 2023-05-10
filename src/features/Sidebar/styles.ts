@@ -1,11 +1,7 @@
 import { motion } from 'framer-motion'
 import styled, { css } from 'styled-components'
 
-import * as m from './motion'
-
-export const SidebarWrapper = styled(motion.div).attrs<{ isMobile: boolean }>(({ isMobile }) =>
-  m.sidebarWrapperAttrs(isMobile),
-)<{ isMobile: boolean }>`
+export const SidebarWrapper = styled(motion.div)`
   z-index: 100;
 
   overflow: hidden;
@@ -14,21 +10,13 @@ export const SidebarWrapper = styled(motion.div).attrs<{ isMobile: boolean }>(({
   flex-shrink: 0;
   justify-content: space-between;
 
-  width: 240px;
+  width: ${({ theme }) => theme.sizes.sidebar.width};
   height: 100vh;
 
+  font-size: 16px;
   color: #ffffffa6;
 
   background-color: ${({ theme }) => theme.palette.sidebar};
-
-  ${({ isMobile }) =>
-    isMobile
-      ? css`
-          position: absolute;
-        `
-      : css`
-          position: relative;
-        `}
 `
 
 export const SidebarInner = styled.div`
@@ -39,10 +27,11 @@ export const SidebarInner = styled.div`
 
 export const SidebarLogo = styled.div`
   position: relative;
-  height: 80px;
 
   display: flex;
   align-items: center;
+
+  height: 80px;
   padding-left: 12px;
 `
 
@@ -67,6 +56,7 @@ export const SidebarList = styled.ul`
 
 export const SidebarListItem = styled.li<{ $isActive: boolean }>`
   position: relative;
+
   display: flex;
   align-items: center;
   gap: 12px;
@@ -78,31 +68,37 @@ export const SidebarListItem = styled.li<{ $isActive: boolean }>`
   ${({ $isActive, theme }) =>
     $isActive &&
     css`
-      background-color: ${theme.palette.sidebarSelectedItem};
+      font-weight: 500;
       color: #fff;
+      background-color: ${theme.palette.sidebarSelectedItem};
 
       ::before {
         content: '';
+
         position: absolute;
         top: 0;
         left: 0;
-        height: 100%;
+
         width: 3px;
+        height: 100%;
+
         background-color: ${theme.palette.primary};
       }
 
       ::after {
         content: '';
+
         position: absolute;
-        height: 8px;
-        width: 8px;
         top: 50%;
         right: 12px;
         transform: translateY(-50%);
 
-        border-radius: 50%;
+        width: 8px;
+        height: 8px;
+
         background: #ffd500;
-        box-shadow: 0px 3px 8px rgba(237, 218, 1, 0.5);
+        border-radius: 50%;
+        box-shadow: 0 3px 8px rgb(237 218 1 / 50%);
       }
     `}
 `
@@ -116,13 +112,10 @@ export const SidebarActions = styled.div`
   padding-inline: 20px;
 `
 
-export const SidebarOverlay = styled(motion.div).attrs(m.sidebarOverlayAttrs)`
+export const SidebarOverlay = styled(motion.div)`
   position: fixed;
   z-index: 90;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
+  inset: 0;
 
   background-color: ${({ theme }) => theme.palette.primary};
   backdrop-filter: blur(2px);

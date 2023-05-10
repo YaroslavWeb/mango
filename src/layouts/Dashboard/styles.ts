@@ -13,10 +13,10 @@ export const LayoutWrapper = styled(motion.div)`
   flex: auto;
   flex-direction: column;
 
-  width: calc(100% - 240px);
+  width: calc(100% - ${({ theme }) => theme.sizes.sidebar}px);
   height: 100vh;
 
-  background: #f0f2f5;
+  background: #f1f4f9;
 `
 
 export const LayoutContainer = styled.div`
