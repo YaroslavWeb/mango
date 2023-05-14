@@ -42,4 +42,11 @@ export const GlobalStyles = createGlobalStyle`
   input {
     border: none;
   }
+
+  button {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    
+  }
 `

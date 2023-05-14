@@ -1,14 +1,15 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit'
 
-import { sidebarSlice } from 'features/Sidebar/slice'
+import { callsAPI } from 'services/calls'
 
 const rootReducer = combineReducers({
-  // Feature slices
-  [sidebarSlice.name]: sidebarSlice.reducer,
+  // Services
+  [callsAPI.reducerPath]: callsAPI.reducer,
 })
 
 export const store = configureStore({
   reducer: rootReducer,
+  middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(callsAPI.middleware),
 })
 
 export type RootState = ReturnType<typeof store.getState>

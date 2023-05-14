@@ -1,7 +1,6 @@
-import { motion } from 'framer-motion'
 import styled, { css } from 'styled-components'
 
-export const SidebarWrapper = styled(motion.div)`
+export const SidebarWrapper = styled.div`
   z-index: 100;
 
   overflow: hidden;
@@ -112,7 +111,7 @@ export const SidebarActions = styled.div`
   padding-inline: 20px;
 `
 
-export const SidebarOverlay = styled(motion.div)`
+export const SidebarOverlay = styled.div`
   position: fixed;
   z-index: 90;
   inset: 0;

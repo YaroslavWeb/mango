@@ -1,14 +1,12 @@
-import { motion } from 'framer-motion'
 import styled from 'styled-components'
 
 export const Layout = styled.div`
   display: flex;
   flex-direction: 'row';
-
   min-height: 100vh;
 `
 
-export const LayoutWrapper = styled(motion.div)`
+export const LayoutWrapper = styled.div`
   display: flex;
   flex: auto;
   flex-direction: column;
@@ -36,6 +34,5 @@ export const LayoutContent = styled.div`
 `
 export const LayoutFooter = styled.div`
   margin-top: 8px;
-
   text-align: center;
 `
